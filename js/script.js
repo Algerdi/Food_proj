@@ -414,11 +414,15 @@ window.addEventListener('DOMContentLoaded', () => {
         dots.push(dot);
     }
 
+    function deleteNotDigits(str) {
+        return +str.replace(/\D/g, '');
+    }
+
     next.addEventListener('click', () => {
-        if (offset == +width.slice(0, width.length - 2) * (slides.length -1)) {
+        if (offset == deleteNotDigits(width) * (slides.length -1)) {
             offset = 0;
         } else {
-            offset += +width.slice(0, width.length - 2);
+            offset += deleteNotDigits(width);
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -443,9 +447,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     prev.addEventListener('click', () => {
         if ( offset == 0) {
-            offset = +width.slice(0, width.length - 2) * (slides.length -1);
+            offset = deleteNotDigits(width) * (slides.length -1);
         } else {
-            offset -= +width.slice(0, width.length - 2);
+            offset -= deleteNotDigits(width);
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -475,7 +479,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             slideIndex = slideTo;
 
-            offset = +width.slice(0, width.length - 2) * (slideTo -1);
+            offset = deleteNotDigits(width) * (slideTo -1);
 
             slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -490,6 +494,16 @@ window.addEventListener('DOMContentLoaded', () => {
             
         });
     });
+
+
+    
+
+
+
+
+
+
+    
 
     // showSlides(slideIndex);
 
@@ -528,7 +542,90 @@ window.addEventListener('DOMContentLoaded', () => {
     // });
 
 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Регулярные выражения 
+    // new RegExp('pattern', 'flags');
+    // /pattern/f
+
+
+    // const ans = prompt('введите ваше имя');
+
+    // const reg = /n/ig;
     
+    //  Флаги в регулярке
+    // i - независимо от регистра
+    // g - поиск нескольки вхождений
+    // m - многострочный режим
+
+    // console.log(ans.search(reg));
+    // console.log(ans.match(reg));
+
+    // const pass = prompt('password');
+
+    // console.log(pass.replace(/love/g, 'pizza'));
+
+    // console.log('12-34-56'.replace(/-/g, ':'));
+
+
+
+    // const reg = /[^a]/g;
+
+    // const ans = prompt('введите вашу строку');
+
+    // // console.log(reg.test(ans));
+
+    // //  \d - цифры
+    // //  \w - буквы
+    // //  \s - пробелы
+    // console.log(ans.match(reg));
+
+
+
+
+
+//  LOCAL STORAGE
+
+    // localStorage.setItem('number', 5);
+    // console.log(localStorage.getItem('number'));
+    // localStorage.removeItem('number');
+    // localStorage.clear();
 
 
 
@@ -538,37 +635,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //  Constructors 045
+//  Constructors 045
 
     // function User(name, id, human = true) {
     //     this.name = name;
@@ -749,11 +816,5 @@ window.addEventListener('DOMContentLoaded', () => {
     // .filter(item => item[1] === 'persone')
     // .map(item => item[0]);
     // console.log(newArr);
-
-
-
-
-
-});
 
 

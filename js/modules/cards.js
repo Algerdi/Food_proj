@@ -1,4 +1,5 @@
-export function cards() {
+import {getResource} from '../services/services';
+function cards() {
     
     // Class for cards
 
@@ -42,15 +43,7 @@ export function cards() {
 
 
 
-    const getResource = async (url) => {
-        const res = await fetch(url);
 
-        if (!res.ok) {
-            throw new Error(`У тебя ошибка в фетч ${url} со статусом ${res.status}`);
-        }
-
-        return await res.json();
-    };
 
 
     // getResource('http://localhost:3000/menu')
@@ -94,3 +87,4 @@ export function cards() {
 }
 
 
+export default cards;

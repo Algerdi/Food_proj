@@ -1,4 +1,4 @@
-export function calculator() {
+function calculator() {
     
     //  Calculator
     
@@ -115,3 +115,5 @@ export function calculator() {
     getDynamicInformation('#weight');
     getDynamicInformation('#age');
 }
+
+export default calculator;

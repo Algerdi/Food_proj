@@ -303,6 +303,18 @@
 
 
 
+
+    // Try/Catch
+
+    // try {
+    //     console.log('normal');
+    // } catch(error) {
+    //     console.log('error');
+    // } finally{
+    //     console.log('хочу пиццы');
+    // }
+
+
     
 
 

@@ -1,3 +1,4 @@
+import 'jquery';
 import tabs  from './modules/tabs';
 import modal from './modules/modal';
 import timer from './modules/timer';
